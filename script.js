@@ -37,6 +37,7 @@ function rightNow() {
   let h4 = document.querySelector("h4");
   h4.innerHTML = `${currentDay} ${hours}:${minutes}`;
 }
+rightNow();
 function showCity(response) {
   console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
@@ -71,7 +72,7 @@ function showPosition(position) {
   let geoApiKey = "dd148c52602d8cdd859f994ef40ed094";
   let unit = "metric";
   let geoApiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${geoApiKey}&units=${unit}`;
-  let say = alert(`your latitude is${position.coords.latitude}`);
+  //let say = alert(`your latitude is${position.coords.latitude}`);
   console.log(position.coords.latitude);
   console.log(position.coords.latitude);
   axios.get(geoApiUrl).then(showCity);
