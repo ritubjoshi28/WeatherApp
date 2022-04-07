@@ -24,7 +24,15 @@ setCurrent();
 
 function rightNow() {
   let now = new Date();
-  let days = ["Sunday", "Monday", "Tuesday", "Wedensday", "Friday", "saturday"];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wedensday",
+    "Thursday",
+    "Friday",
+    "saturday",
+  ];
   let currentDay = days[now.getDay()];
   let hours = now.getHours();
   if (hours < 10) {
@@ -38,6 +46,7 @@ function rightNow() {
   h4.innerHTML = `${currentDay} ${hours}:${minutes}`;
 }
 rightNow();
+
 function showCity(response) {
   console.log(response.data);
   document.querySelector("h1").innerHTML = response.data.name;
@@ -52,6 +61,12 @@ function showCity(response) {
   )}`;
   document.querySelector("#howisit").innerHTML =
     response.data.weather[0].description;
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
 }
 function showTemperature(event) {
   event.preventDefault();
