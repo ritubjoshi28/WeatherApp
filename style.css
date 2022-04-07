@@ -1,5 +1,5 @@
 body {
-  background-color: #3b2465;
+  background-color: white;
 }
 
 .box {
@@ -123,4 +123,10 @@ button {
   text-align: center;
   border: none;
   padding: 0;
+}
+.links {
+  text-decoration: none;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
 }
